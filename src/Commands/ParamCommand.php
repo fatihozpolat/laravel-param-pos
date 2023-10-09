@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace FatihOzpolat\Param\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ParamCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-param-pos';
 
     public $description = 'My command';
 
