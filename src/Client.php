@@ -101,6 +101,14 @@ class Client extends SoapClient
             $wsdl = config('param-pos.test') ? self::TEST_SAVE_CARD_URL : self::PROD_SAVE_CARD_URL;
         }
 
-        parent::__construct($wsdl);
+        parent::__construct($wsdl, [
+            'stream_context' => stream_context_create([
+                'ssl' => [
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true,
+                ]
+            ]),
+        ]);
     }
 }
