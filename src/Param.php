@@ -1088,8 +1088,8 @@ class Param
         $res = $this->client->TP_Mutabakat_Ozet([
             'G' => $this->G,
             'GUID' => $this->GUID,
-            'Tarih_Bas' => $startAt->toDateTimeString(),
-            'Tarih_Bit' => $endAt->toDateTimeString(),
+            'Tarih_Bas' => $startAt->format('d.m.Y H:i:s'),
+            'Tarih_Bit' => $endAt->format('d.m.Y H:i:s'),
         ]);
 
         $res = $res->TP_Mutabakat_OzetResult;
@@ -1118,7 +1118,7 @@ class Param
         $res = $this->client->TP_Mutabakat_Detay([
             'G' => $this->G,
             'GUID' => $this->GUID,
-            'Tarih' => $date->toDateTimeString(),
+            'Tarih' => $date->format('d.m.Y H:i:s'),
         ]);
 
         $res = $res->TP_Mutabakat_DetayResult;
@@ -1197,8 +1197,8 @@ class Param
         $res = $this->client->TP_Islem_Izleme([
             'G' => $this->G,
             'GUID' => $this->GUID,
-            'Tarih_Bas' => $startAt->toDateTimeString(),
-            'Tarih_Bit' => $endAt->toDateTimeString(),
+            'Tarih_Bas' => $startAt->format('d.m.Y H:i:s'),
+            'Tarih_Bit' => $endAt->format('d.m.Y H:i:s'),
             'Islem_Tip' => $islem_tip,
             'Islem_Durum' => $islem_durum,
         ]);
