@@ -39,6 +39,26 @@ class Param
         $this->GUID = config('param-pos.guid');
     }
 
+
+    /**
+     * Aynı anda birden fazla hesap kullanılması gerektiğinde kullanılır.
+     * @param string $client_code
+     * @param string $client_username
+     * @param string $client_password
+     * @param string $guid
+     * @return void
+     */
+    public function setCredentials(string $client_code, string $client_username, string $client_password, string $guid): void
+    {
+        $this->G = [
+            'CLIENT_CODE' => $client_code,
+            'CLIENT_USERNAME' => $client_username,
+            'CLIENT_PASSWORD' => $client_password,
+        ];
+
+        $this->GUID = $guid;
+    }
+
     /**
      * Kredi kartı saklama için kullanılır
      *
